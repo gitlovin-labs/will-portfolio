@@ -392,3 +392,53 @@ button:focus-visible, a:focus-visible, summary:focus-visible { outline:3px solid
   .metric-card-interactive .metric-card-button:focus-visible { border-radius:20px; }
   .case-flow > span { gap:8px; }
 }
+
+
+/* Final mobile surface polish */
+.build-card {
+  background: #fff;
+}
+.mini-browser {
+  border-color: rgba(16,17,20,.14);
+  background: #fff;
+  box-shadow: 0 22px 50px rgba(37,52,86,.24), 0 2px 8px rgba(16,17,20,.10);
+}
+.mini-page {
+  background: linear-gradient(135deg,#fff,#f3f6ff);
+}
+
+@media(max-width:520px) {
+  #missions,
+  #builds {
+    background: #f7f7f5;
+  }
+
+  #missions {
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .build-grid {
+    gap: 18px;
+  }
+
+  .build-card {
+    border-color: rgba(16,17,20,.12);
+    background: #fff;
+    box-shadow: 0 12px 30px rgba(29,31,38,.07);
+  }
+
+  .build-copy {
+    background: #fff;
+  }
+
+  .will-os-preview {
+    background: linear-gradient(135deg,#d8e7ff,#e7e5ff 56%,#f7e5f3);
+  }
+
+  .mini-browser {
+    width: min(300px,92%);
+    border-color: rgba(16,17,20,.18);
+    box-shadow: 0 18px 36px rgba(37,52,86,.26), 0 2px 8px rgba(16,17,20,.12);
+  }
+}
