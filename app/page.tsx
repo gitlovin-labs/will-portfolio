@@ -14,10 +14,10 @@ const missions = [
 ];
 
 const experience = [
-  { company: "Deloitte", role: "Business Technology Analyst", period: "2018–2020", mandate: "Business transformation and executive reporting for U.S. Government programs.", proof: "Consolidated 46 reporting systems into one environment supporting oversight of $800M in assets.", tags: ["Transformation", "Power BI", "Executive reporting"] },
-  { company: "Deposco", role: "Solutions Consultant", period: "2020–2022", mandate: "Enterprise SaaS implementation and operational workflow translation.", proof: "Configured data, reporting, and warehouse workflows for a $100M+ cold chain logistics provider.", tags: ["SaaS", "SQL", "Implementation"] },
-  { company: "Booster", role: "Senior Manager, Revenue Operations", period: "2022–2026", mandate: "Pricing, revenue operations, and commercial operating-system ownership.", proof: "Led pricing transformation, incentive redesign, CRM migration, planning, and executive operating cadence.", tags: ["Pricing", "RevOps", "Commercial strategy"] },
-  { company: "Onward Hound", role: "Founder & Operator", period: "2022–Present", mandate: "Founder/operator proof across product, economics, sourcing, and ecommerce.", proof: "Built the brand from zero to $625K+ in Amazon revenue and 32K+ units sold.", tags: ["Ecommerce", "Amazon", "Founder"] },
+  { company: "Deloitte", role: "Business Technology Consultant", period: "Sep 2019–Sep 2021", mandate: "Business transformation and executive reporting for U.S. Government programs.", proof: "Consolidated 46 reporting systems into one environment supporting oversight of $800M in assets.", tags: ["Transformation", "Power BI", "Executive reporting"] },
+  { company: "Deposco", role: "Solutions Consultant", period: "Sep 2021–Jul 2022", mandate: "Enterprise SaaS implementation and operational workflow translation.", proof: "Configured data, reporting, and warehouse workflows for a $100M+ cold chain logistics provider.", tags: ["SaaS", "SQL", "Implementation"] },
+  { company: "Booster", role: "Senior Manager, Revenue Operations", period: "Jul 2022–Jan 2026", mandate: "Pricing, revenue operations, and commercial operating-system ownership.", proof: "Led pricing transformation, incentive redesign, CRM migration, planning, and executive operating cadence.", tags: ["Pricing", "RevOps", "Commercial strategy"] },
+  { company: "Onward Hound", role: "Founder & Operator", period: "Feb 2022–Present", mandate: "Founder/operator proof across product, economics, sourcing, and ecommerce.", proof: "Built the brand from zero to $625K+ in Amazon revenue and 32K+ units sold.", tags: ["Ecommerce", "Amazon", "Founder"] },
 ];
 
 const builds = [
