@@ -13,9 +13,18 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://will-portfolio-delta.vercel.app"),
   title: "Will McLaughlin | Commercial Operator & Builder",
   description:
     "Commercial operator, founder, and AI-enabled builder working across pricing, revenue operations, analytics, ecommerce, and practical software.",
+  alternates: { canonical: "/" },
+  openGraph: {
+    title: "Will McLaughlin | Commercial Operator & Builder",
+    description: "Turning complicated commercial problems into practical systems.",
+    url: "/",
+    siteName: "Will OS",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
