@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useId, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export type OutcomeCaseStudyProps = {
   value: string;
@@ -21,7 +21,6 @@ export default function OutcomeCaseStudy(props: OutcomeCaseStudyProps) {
   const [isOpen, setIsOpen] = useState(false);
   const triggerRef = useRef<HTMLButtonElement>(null);
   const dialogRef = useRef<HTMLElement>(null);
-  const titleId = useId();
 
   useEffect(() => {
     if (!isOpen) return;
@@ -61,7 +60,7 @@ export default function OutcomeCaseStudy(props: OutcomeCaseStudyProps) {
         <div className="case-overlay" role="presentation" onMouseDown={(event) => {
           if (event.currentTarget === event.target) setIsOpen(false);
         }}>
-          <section ref={dialogRef} className="case-window" role="dialog" aria-modal="true" aria-labelledby={titleId}>
+          <section ref={dialogRef} className="case-window" role="dialog" aria-modal="true" aria-labelledby="outcome-case-title">
             <div className="case-window-bar">
               <div className="traffic-lights" aria-hidden="true"><i /><i /><i /></div>
               <span>case-study.app</span>
@@ -70,7 +69,7 @@ export default function OutcomeCaseStudy(props: OutcomeCaseStudyProps) {
             <div className="case-content">
               <div className="case-hero">
                 <p className="section-kicker">{props.category}</p>
-                <h2 id={titleId}>{props.headline}</h2>
+                <h2 id="outcome-case-title">{props.headline}</h2>
                 <p>{props.capabilities}</p>
               </div>
               <div className="case-stat-row">
