@@ -1,26 +1,179 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0e0c08;
+  --foreground: #eadfbe;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
+  margin: 0;
+  background:
+    radial-gradient(circle at 20% 10%, rgba(111, 78, 34, 0.18), transparent 32rem),
+    radial-gradient(circle at 90% 40%, rgba(66, 83, 44, 0.12), transparent 30rem),
+    linear-gradient(180deg, #131009 0%, #090806 100%);
   color: var(--foreground);
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+body::before {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  content: "";
+  pointer-events: none;
+  opacity: 0.16;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 3px,
+      rgba(255, 255, 255, 0.025) 4px
+    );
+}
+
+::selection {
+  color: #17130d;
+  background: #d8ad50;
+}
+
+.rune-title {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 800;
+  letter-spacing: 0.025em;
+  text-shadow:
+    0 2px 0 #1a1207,
+    0 0 18px rgba(218, 163, 62, 0.12);
+}
+
+.rune-panel {
+  position: relative;
+  padding: 1.5rem;
+  overflow: hidden;
+  background:
+    linear-gradient(rgba(48, 39, 25, 0.97), rgba(31, 26, 18, 0.98)),
+    #302719;
+  border: 3px solid #5c4628;
+  outline: 1px solid #1a140c;
+  box-shadow:
+    inset 0 0 0 2px rgba(187, 145, 72, 0.15),
+    inset 0 16px 32px rgba(255, 227, 162, 0.025),
+    0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+.rune-panel::before,
+.rune-panel::after {
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  content: "";
+  background: #94703c;
+  border: 1px solid #2a1d0d;
+  transform: rotate(45deg);
+}
+
+.rune-panel::before {
+  top: 8px;
+  left: 8px;
+}
+
+.rune-panel::after {
+  right: 8px;
+  bottom: 8px;
+}
+
+.panel-label,
+.quest-number {
+  color: #d69b3c;
   font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.rune-panel dt {
+  color: #978868;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.rune-panel dd {
+  margin-top: 0.25rem;
+  color: #ead9aa;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.osrs-button {
+  display: inline-flex;
+  min-height: 46px;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 1.25rem;
+  color: #21160a;
+  background: linear-gradient(180deg, #e2b85f 0%, #a9772e 100%);
+  border: 2px solid #f0ce82;
+  outline: 2px solid #513613;
+  box-shadow:
+    inset 0 -4px 0 rgba(66, 40, 11, 0.3),
+    0 4px 0 #130d07;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition:
+    filter 150ms ease,
+    transform 150ms ease;
+}
+
+.osrs-button:hover {
+  filter: brightness(1.15);
+  transform: translateY(-2px);
+}
+
+.osrs-button:active {
+  box-shadow:
+    inset 0 -2px 0 rgba(66, 40, 11, 0.3),
+    0 2px 0 #130d07;
+  transform: translateY(1px);
+}
+
+.osrs-button-secondary {
+  color: #ead9aa;
+  background: linear-gradient(180deg, #4b402d 0%, #292219 100%);
+  border-color: #816437;
+}
+
+.nav-link {
+  position: relative;
+  text-decoration: none;
+  transition: color 150ms ease;
+}
+
+.nav-link:hover {
+  color: #f0c666;
+}
+
+.quest-status {
+  padding: 0.3rem 0.55rem;
+  color: #b7d697;
+  background: rgba(83, 117, 55, 0.18);
+  border: 1px solid rgba(141, 183, 105, 0.35);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
 }
