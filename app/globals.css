@@ -380,3 +380,15 @@ button:focus-visible, a:focus-visible, summary:focus-visible { outline:3px solid
   .case-flow{flex-wrap:wrap;gap:8px}.case-flow span{font-size:10px}.case-ownership{grid-template-columns:1fr;gap:7px}
 }
 @media(prefers-reduced-motion:reduce){ html{scroll-behavior:auto}*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important} }
+
+
+/* Shared interactive outcome cards */
+.metric-card-interactive:not(.metric-card-featured) .metric-detail { color:#747780; }
+.metric-card-interactive:not(.metric-card-featured) .metric-link { color:var(--blue); }
+.metric-card-interactive .metric-card-button:focus-visible { border-radius:24px; outline-offset:-5px; }
+.case-flow > span { display:inline-flex; align-items:center; gap:12px; }
+.case-flow > span i { color:#93c5fd; font-style:normal; }
+@media(max-width:520px){
+  .metric-card-interactive .metric-card-button:focus-visible { border-radius:20px; }
+  .case-flow > span { gap:8px; }
+}
