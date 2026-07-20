@@ -192,6 +192,7 @@ export default function Home() {
           <div><p className="section-kicker">Open channel</p><h2>Let’s build something useful.</h2></div>
           <div className="footer-links">
             <a href="mailto:wmclaug96@gmail.com">Email <ArrowIcon /></a>
+            <a href="https://www.linkedin.com/in/williamfmclaughlin" target="_blank" rel="noreferrer">LinkedIn <ArrowIcon /></a>
             <a href="https://github.com/gitlovin-labs" target="_blank" rel="noreferrer">GitHub <ArrowIcon /></a>
           </div>
         </div>
