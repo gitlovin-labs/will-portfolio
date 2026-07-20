@@ -1,3 +1,5 @@
+import PricingCaseStudy from "./components/PricingCaseStudy";
+
 const outcomes = [
   { value: "$5.4M", label: "Projected customer-lifetime net profit impact", detail: "Led a pricing transformation across 300+ accounts with essentially zero regretted churn.", className: "metric-card metric-card-featured" },
   { value: "$625K+", label: "Ecommerce revenue", detail: "Built Onward Hound from zero across 20 SKUs and 32K+ units sold.", className: "metric-card" },
@@ -63,7 +65,8 @@ export default function Home() {
           <p>Representative results across pricing, business transformation, and ecommerce operations.</p>
         </div>
         <div className="metrics-grid">
-          {outcomes.map((outcome) => (
+          <PricingCaseStudy />
+          {outcomes.slice(1).map((outcome) => (
             <article className={outcome.className} key={outcome.value}>
               <p className="metric-value">{outcome.value}</p><h3>{outcome.label}</h3><p>{outcome.detail}</p>
             </article>
