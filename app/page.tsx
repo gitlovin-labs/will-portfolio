@@ -1,10 +1,60 @@
-import PricingCaseStudy from "./components/PricingCaseStudy";
+import OutcomeCaseStudy from "./components/OutcomeCaseStudy";
 
 const outcomes = [
-  { value: "$5.4M", label: "Projected customer-lifetime net profit impact", detail: "Led a pricing transformation across 300+ accounts with essentially zero regretted churn.", className: "metric-card metric-card-featured" },
-  { value: "$625K+", label: "Ecommerce revenue", detail: "Built Onward Hound from zero across 20 SKUs and 32K+ units sold.", className: "metric-card" },
-  { value: "46 → 1", label: "Reporting systems consolidated", detail: "Unified reporting supporting oversight of $800M in assets.", className: "metric-card" },
-  { value: "0 → 90%", label: "Profitability-aligned incentives", detail: "Redesigned commission economics, improving profitability alignment from near zero to approximately 90%.", className: "metric-card metric-card-wide" },
+  {
+    value: "$5.4M", label: "Projected customer-lifetime net profit impact", detail: "Led a pricing transformation across 300+ accounts with essentially zero regretted churn.", className: "metric-card metric-card-featured",
+    category: "Pricing transformation", headline: "Turning fragmented pricing into a controlled growth system.", capabilities: "Commercial strategy · Pricing operations · Change management",
+    stats: [{value:"$5.4M",label:"Projected customer-lifetime net profit impact"},{value:"300+",label:"Accounts migrated"},{value:"Near-zero",label:"Regretted churn"}],
+    flow:["Diagnose","Segment","Align","Migrate"],
+    ownership:"Strategy, financial modeling, segmentation, executive approval path, cross-functional rollout design, account-level implementation preparation, and field enablement.",
+    sections:[
+      {title:"The problem",text:"Legacy account pricing was fragmented and inconsistently connected to profitability, cost to serve, customer value, contract terms, and retention risk."},
+      {title:"The operating model",text:"Analyzed the account base, modeled gross and net profitability, reviewed contractual rights, established profitability floors, and segmented accounts by eligibility, risk, and selling approach."},
+      {title:"The execution",text:"Aligned Sales, Customer Success, Finance, Legal, Product, Engineering, Operations, and executive leadership; translated the approved strategy into account-level changes and coached a five-person Customer Success team through rollout scenarios."},
+      {title:"The result",text:"Migrated 300+ accounts and created $5.4M in projected customer-lifetime net profit impact while achieving essentially zero regretted churn."}
+    ],
+    note:"The $5.4M figure is projected customer-lifetime net profit impact—not booked revenue or realized profit."
+  },
+  {
+    value:"$625K+",label:"Ecommerce revenue",detail:"Built Onward Hound from zero across a 20-SKU portfolio and 32K+ units sold.",className:"metric-card",
+    category:"Founder operating system",headline:"Building an Amazon-first consumer brand from zero.",capabilities:"Ecommerce · Product strategy · Founder operations",
+    stats:[{value:"$625K+",label:"Lifetime Amazon revenue"},{value:"32K+",label:"Units sold"},{value:"20",label:"SKU portfolio"}],
+    flow:["Create","Source","Launch","Optimize"],
+    ownership:"Product development, sourcing, supply chain, listings, advertising, pricing, margin, packaging, fulfillment, bookkeeping, customer experience, lifecycle marketing, and analytics.",
+    sections:[
+      {title:"The opportunity",text:"Create a premium dog wellness and natural-chew brand with differentiated products and direct ownership of the customer experience and unit economics."},
+      {title:"The operating model",text:"Built the business from idea to operating company and personally owned the full system across product, supply chain, marketplace execution, finance, and customer experience."},
+      {title:"The marketplace engine",text:"Managed keyword research, listings, paid advertising, rank strategy, pricing, conversion, product positioning, and performance analysis."},
+      {title:"The result",text:"Generated $625K+ in lifetime Amazon revenue across 32,000+ units sold while building a 20-SKU portfolio."}
+    ]
+  },
+  {
+    value:"46 → 1",label:"Reporting systems consolidated",detail:"Unified reporting supporting oversight of $800M in assets.",className:"metric-card",
+    category:"Reporting modernization",headline:"Consolidating fragmented financial reporting into one trusted environment.",capabilities:"Business transformation · Power BI · Change management",
+    stats:[{value:"46 → 1",label:"Reporting systems consolidated"},{value:"$800M",label:"Assets supported"},{value:"80+",label:"Stakeholders supported"}],
+    flow:["Audit","Unify","Validate","Adopt"],
+    ownership:"Technical delivery, Excel/VBA and Power Query workflows, Power BI dashboard logic, quality assurance, user-acceptance testing, feedback loops, training, and adoption.",
+    sections:[
+      {title:"The problem",text:"Financial planning was fragmented across five divisions and 46 Excel-based systems, limiting consistency and visibility."},
+      {title:"The build",text:"Improved and maintained source workflows, supported repository pipelines, and built and validated the Power BI reporting logic."},
+      {title:"The adoption",text:"Led quality assurance, user-acceptance testing, feedback loops, and more than 30 training sessions supporting adoption across 80+ stakeholders."},
+      {title:"The result",text:"Consolidated 46 systems into a unified reporting tool supporting visibility across $800M in assets."}
+    ]
+  },
+  {
+    value:"0 → 90%",label:"Profitability-aligned incentives",detail:"Redesigned commission economics, improving profitability alignment from near zero to approximately 90%.",className:"metric-card metric-card-wide",
+    category:"Incentive transformation",headline:"Connecting seller rewards to profitable growth.",capabilities:"Incentive design · Financial modeling · Change management",
+    stats:[{value:"0 → 90%",label:"Approximate alignment improvement"},{value:"$300K+",label:"Commissions and eligible bonuses administered"},{value:"20+",label:"Plan participants"}],
+    flow:["Model","Test","Teach","Operate"],
+    ownership:"Model design, testing, implementation, administration, communication, seller education, office hours, true-ups, and ongoing cross-functional governance.",
+    sections:[
+      {title:"The problem",text:"The existing commission structure had near-zero alignment with net sales profitability and did not adequately reflect cost to serve."},
+      {title:"The model",text:"Worked with the CFO and sales leadership to incorporate profitability, service cost, marketing cost, and leadership cost while protecting sellers from inappropriate operational penalties."},
+      {title:"The rollout",text:"Led sequenced stakeholder alignment, seller education, administrative preparation, office hours, implementation support, and ongoing true-ups across multiple quarters."},
+      {title:"The result",text:"Moved incentive alignment from near zero to approximately 90% and administered $300K+ across 20+ participants. Monthly contracted volume subsequently increased 25%."}
+    ],
+    note:"The 90% alignment figure is approximate. The 25% volume increase followed implementation; it is not presented as solely caused by the redesign."
+  }
 ];
 
 const missions = [
@@ -76,12 +126,7 @@ export default function Home() {
           <p>Representative results across pricing, business transformation, and ecommerce operations.</p>
         </div>
         <div className="metrics-grid">
-          <PricingCaseStudy />
-          {outcomes.slice(1).map((outcome) => (
-            <article className={outcome.className} key={outcome.value}>
-              <p className="metric-value">{outcome.value}</p><h3>{outcome.label}</h3><p>{outcome.detail}</p>
-            </article>
-          ))}
+          {outcomes.map((outcome) => <OutcomeCaseStudy key={outcome.value} {...outcome} />)}
         </div>
       </section>
 
