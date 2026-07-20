@@ -1,17 +1,31 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function PricingCaseStudy() {
   const [isOpen, setIsOpen] = useState(false);
+  const triggerRef = useRef<HTMLButtonElement>(null);
+  const dialogRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     if (!isOpen) return;
-    const closeOnEscape = (event: KeyboardEvent) => event.key === "Escape" && setIsOpen(false);
-    document.addEventListener("keydown", closeOnEscape);
+    const handleKeys = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setIsOpen(false);
+      if (event.key === "Tab" && dialogRef.current) {
+        const focusable = Array.from(dialogRef.current.querySelectorAll<HTMLElement>("button, a[href], [tabindex]:not([tabindex='-1'])"));
+        if (!focusable.length) return;
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+        else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+      }
+    };
+    document.addEventListener("keydown", handleKeys);
+    requestAnimationFrame(() => dialogRef.current?.querySelector<HTMLElement>("button")?.focus());
     document.body.style.overflow = "hidden";
     return () => {
-      document.removeEventListener("keydown", closeOnEscape);
+      document.removeEventListener("keydown", handleKeys);
+      triggerRef.current?.focus();
       document.body.style.overflow = "";
     };
   }, [isOpen]);
@@ -19,7 +33,7 @@ export default function PricingCaseStudy() {
   return (
     <>
       <article className="metric-card metric-card-featured metric-card-interactive">
-        <button className="metric-card-button" onClick={() => setIsOpen(true)} aria-haspopup="dialog">
+        <button ref={triggerRef} className="metric-card-button" onClick={() => setIsOpen(true)} aria-haspopup="dialog">
           <span className="metric-value">$5.4M</span>
           <span className="metric-title">Projected customer-lifetime net profit impact</span>
           <span className="metric-detail">Led a pricing transformation across 300+ accounts with essentially zero regretted churn.</span>
@@ -31,7 +45,7 @@ export default function PricingCaseStudy() {
         <div className="case-overlay" role="presentation" onMouseDown={(event) => {
           if (event.currentTarget === event.target) setIsOpen(false);
         }}>
-          <section className="case-window" role="dialog" aria-modal="true" aria-labelledby="pricing-case-title">
+          <section ref={dialogRef} className="case-window" role="dialog" aria-modal="true" aria-labelledby="pricing-case-title">
             <div className="case-window-bar">
               <div className="traffic-lights" aria-hidden="true"><i /><i /><i /></div>
               <span>case-study-001.app</span>
@@ -50,6 +64,10 @@ export default function PricingCaseStudy() {
                 <div><strong>300+</strong><span>Accounts migrated</span></div>
                 <div><strong>~0</strong><span>Regretted churn</span></div>
               </div>
+
+              <div className="case-flow" aria-label="Pricing transformation process"><span>Diagnose</span><i>→</i><span>Segment</span><i>→</i><span>Align</span><i>→</i><span>Migrate</span></div>
+
+              <div className="case-ownership"><strong>My ownership</strong><p>Strategy, financial modeling, segmentation, executive approval path, cross-functional rollout design, account-level implementation preparation, and field enablement.</p></div>
 
               <div className="case-grid">
                 <article><span>01</span><h3>The problem</h3><p>Legacy account pricing was fragmented and inconsistently connected to profitability, cost to serve, customer value, contract terms, and retention risk.</p></article>
