@@ -4,7 +4,7 @@ const outcomes = [
   { value: "$5.4M", label: "Projected customer-lifetime net profit impact", detail: "Led a pricing transformation across 300+ accounts with essentially zero regretted churn.", className: "metric-card metric-card-featured" },
   { value: "$625K+", label: "Ecommerce revenue", detail: "Built Onward Hound from zero across 20 SKUs and 32K+ units sold.", className: "metric-card" },
   { value: "46 → 1", label: "Reporting systems consolidated", detail: "Unified reporting supporting oversight of $800M in assets.", className: "metric-card" },
-  { value: "0 → ~90%", label: "Profitability-aligned incentives", detail: "Redesigned commission economics to connect seller rewards with profitable growth.", className: "metric-card metric-card-wide" },
+  { value: "0 → 90%", label: "Profitability-aligned incentives", detail: "Redesigned commission economics, improving profitability alignment from near zero to approximately 90%.", className: "metric-card metric-card-wide" },
 ];
 
 const missions = [
