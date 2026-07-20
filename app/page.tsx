@@ -4,13 +4,20 @@ const outcomes = [
   { value: "$5.4M", label: "Projected customer-lifetime net profit impact", detail: "Led a pricing transformation across 300+ accounts with essentially zero regretted churn.", className: "metric-card metric-card-featured" },
   { value: "$625K+", label: "Ecommerce revenue", detail: "Built Onward Hound from zero across 20 SKUs and 32K+ units sold.", className: "metric-card" },
   { value: "46 → 1", label: "Reporting systems consolidated", detail: "Unified reporting supporting oversight of $800M in assets.", className: "metric-card" },
-  { value: "32K+", label: "Consumer units sold", detail: "Hands-on marketplace operations, product development, sourcing, and growth.", className: "metric-card metric-card-wide" },
+  { value: "0 → ~90%", label: "Profitability-aligned incentives", detail: "Redesigned commission economics to connect seller rewards with profitable growth.", className: "metric-card metric-card-wide" },
 ];
 
 const missions = [
   { number: "01", title: "Build useful AI applications", text: "Turn real operating problems into practical, human-in-the-loop tools—and document what works.", status: "Building now" },
   { number: "02", title: "Grow Onward Hound", text: "Improve product, channel, supplier, and economic systems behind an established pet-products brand.", status: "Operating" },
   { number: "03", title: "Join the right operating team", text: "Apply pricing, commercial strategy, analytics, and founder judgment to consequential work.", status: "Exploring" },
+];
+
+const experience = [
+  { company: "Deloitte", role: "Business Technology Analyst", period: "2018–2020", mandate: "Business transformation and executive reporting for U.S. Government programs.", proof: "Consolidated 46 reporting systems into one environment supporting oversight of $800M in assets.", tags: ["Transformation", "Power BI", "Executive reporting"] },
+  { company: "Deposco", role: "Solutions Consultant", period: "2020–2022", mandate: "Enterprise SaaS implementation and operational workflow translation.", proof: "Configured data, reporting, and warehouse workflows for a $100M+ cold chain logistics provider.", tags: ["SaaS", "SQL", "Implementation"] },
+  { company: "Booster", role: "Senior Manager, Revenue Operations", period: "2022–2026", mandate: "Pricing, revenue operations, and commercial operating-system ownership.", proof: "Led pricing transformation, incentive redesign, CRM migration, planning, and executive operating cadence.", tags: ["Pricing", "RevOps", "Commercial strategy"] },
+  { company: "Onward Hound", role: "Founder & Operator", period: "2022–Present", mandate: "Founder/operator proof across product, economics, sourcing, and ecommerce.", proof: "Built the brand from zero to $625K+ in Amazon revenue and 32K+ units sold.", tags: ["Ecommerce", "Amazon", "Founder"] },
 ];
 
 const builds = [
@@ -27,9 +34,13 @@ export default function Home() {
         <div className="shell nav-inner">
           <a className="wordmark" href="#top" aria-label="Will McLaughlin home">W<span>.</span></a>
           <div className="nav-links">
-            <a href="#outcomes">Outcomes</a><a href="#missions">Missions</a><a href="#builds">Builds</a><a href="#contact">Connect</a>
+            <a href="#outcomes">Outcomes</a><a href="#missions">Missions</a><a href="#experience">Experience</a><a href="#builds">Builds</a><a href="#contact">Connect</a>
           </div>
           <div className="availability"><span className="status-dot" />Open to the right opportunity</div>
+          <details className="mobile-menu">
+            <summary aria-label="Open navigation">Menu</summary>
+            <div><a href="#outcomes">Outcomes</a><a href="#missions">Missions</a><a href="#experience">Experience</a><a href="#builds">Builds</a><a href="#contact">Connect</a></div>
+          </details>
         </div>
       </nav>
 
@@ -90,6 +101,26 @@ export default function Home() {
         </div>
       </section>
 
+      <section id="experience" className="shell section">
+        <div className="section-heading">
+          <div><p className="section-kicker">Operating history</p><h2>Built across the stack.</h2></div>
+          <p>A progression from transformation and implementation into commercial ownership and founder judgment.</p>
+        </div>
+        <div className="timeline">
+          {experience.map((item, index) => (
+            <article className="timeline-row" key={item.company}>
+              <div className="timeline-marker"><span>{String(index + 1).padStart(2, "0")}</span></div>
+              <div className="timeline-main">
+                <div className="timeline-title"><div><h3>{item.company}</h3><p>{item.role}</p></div><span>{item.period}</span></div>
+                <p className="timeline-mandate">{item.mandate}</p>
+                <p className="timeline-proof">{item.proof}</p>
+                <div className="timeline-tags">{item.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
       <section id="builds" className="shell section">
         <div className="section-heading">
           <div><p className="section-kicker">Lab</p><h2>Things I’m building.</h2></div>
@@ -98,7 +129,13 @@ export default function Home() {
         <div className="build-grid">
           {builds.map((build) => (
             <article className="build-card" key={build.title}>
-              <div className="build-visual"><span>{build.title.slice(0, 1)}</span></div>
+              <div className={build.title === "Will OS" ? "build-visual will-os-preview" : "build-visual workflow-preview"}>
+                {build.title === "Will OS" ? (
+                  <div className="mini-browser"><div className="mini-bar"><i /><i /><i /></div><div className="mini-page"><b>Will OS</b><span /><span /><small>Proof over positioning.</small></div></div>
+                ) : (
+                  <div className="workflow-diagram"><span>Message</span><i>→</i><span>Classify</span><i>→</i><span>Review</span></div>
+                )}
+              </div>
               <div className="build-copy"><p className="build-eyebrow">{build.eyebrow}</p><h3>{build.title}</h3><p>{build.text}</p><span className="build-tag">{build.tag}</span></div>
             </article>
           ))}
