@@ -101,7 +101,11 @@ const shipped = [
   "Production deployment workflow",
 ];
 
-export default function BuildCaseStudy() {
+type BuildCaseStudyProps = {
+  trigger?: "card" | "hero";
+};
+
+export default function BuildCaseStudy({ trigger = "card" }: BuildCaseStudyProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [activeStage, setActiveStage] = useState(0);
   const [view, setView] = useState<"roles" | "system">("roles");
@@ -145,28 +149,41 @@ export default function BuildCaseStudy() {
 
   return (
     <>
-      <article className="build-card build-card-interactive">
+      {trigger === "hero" ? (
         <button
           ref={triggerRef}
-          className="build-card-button"
+          type="button"
+          className="button button-build"
           onClick={() => setIsOpen(true)}
           aria-haspopup="dialog"
         >
-          <div className="build-visual will-os-preview">
-            <div className="mini-browser">
-              <div className="mini-bar"><i /><i /><i /></div>
-              <div className="mini-page"><b>Will OS</b><span /><span /><small>Proof over positioning.</small></div>
-            </div>
-          </div>
-          <div className="build-copy">
-            <p className="build-eyebrow">Build 001 · Live · AI-assisted</p>
-            <h3>Will OS</h3>
-            <p>A living portfolio designed, built, tested, and continuously improved through a human-directed AI workflow.</p>
-            <span className="build-tag">Next.js · TypeScript · Vercel</span>
-            <span className="build-open">Inside the build <span aria-hidden="true">↗</span></span>
-          </div>
+          Inside the build <span aria-hidden="true">↗</span>
         </button>
-      </article>
+      ) : (
+        <article className="build-card build-card-interactive">
+          <button
+            ref={triggerRef}
+            type="button"
+            className="build-card-button"
+            onClick={() => setIsOpen(true)}
+            aria-haspopup="dialog"
+          >
+            <div className="build-visual will-os-preview">
+              <div className="mini-browser">
+                <div className="mini-bar"><i /><i /><i /></div>
+                <div className="mini-page"><b>Will OS</b><span /><span /><small>Proof over positioning.</small></div>
+              </div>
+            </div>
+            <div className="build-copy">
+              <p className="build-eyebrow">Build 001 · Live · AI-assisted</p>
+              <h3>Will OS</h3>
+              <p>A living portfolio designed, built, tested, and continuously improved through a human-directed AI workflow.</p>
+              <span className="build-tag">Next.js · TypeScript · Vercel</span>
+              <span className="build-open">Inside the build <span aria-hidden="true">↗</span></span>
+            </div>
+          </button>
+        </article>
+      )}
 
       {isOpen && (
         <div
