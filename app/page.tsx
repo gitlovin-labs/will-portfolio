@@ -1,4 +1,5 @@
 import OutcomeCaseStudy from "./components/OutcomeCaseStudy";
+import BuildCaseStudy from "./components/BuildCaseStudy";
 
 const outcomes = [
   {
@@ -172,14 +173,11 @@ export default function Home() {
           <p>The portfolio becomes more valuable as the work inside it compounds.</p>
         </div>
         <div className="build-grid">
-          {builds.map((build) => (
+          <BuildCaseStudy />
+          {builds.filter((build) => build.title !== "Will OS").map((build) => (
             <article className="build-card" key={build.title}>
-              <div className={build.title === "Will OS" ? "build-visual will-os-preview" : "build-visual workflow-preview"}>
-                {build.title === "Will OS" ? (
-                  <div className="mini-browser"><div className="mini-bar"><i /><i /><i /></div><div className="mini-page"><b>Will OS</b><span /><span /><small>Proof over positioning.</small></div></div>
-                ) : (
-                  <div className="workflow-diagram"><span>Message</span><i>→</i><span>Classify</span><i>→</i><span>Review</span></div>
-                )}
+              <div className="build-visual workflow-preview">
+                <div className="workflow-diagram"><span>Message</span><i>→</i><span>Classify</span><i>→</i><span>Review</span></div>
               </div>
               <div className="build-copy"><p className="build-eyebrow">{build.eyebrow}</p><h3>{build.title}</h3><p>{build.text}</p><span className="build-tag">{build.tag}</span></div>
             </article>
