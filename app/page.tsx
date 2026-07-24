@@ -102,6 +102,7 @@ export default function Home() {
           <p className="hero-lede">Pricing, revenue operations, analytics, and founder judgment—translated into measurable outcomes and increasingly, useful software.</p>
           <div className="hero-actions">
             <a className="button button-primary" href="#outcomes">Explore my work <ArrowIcon /></a>
+            <BuildCaseStudy trigger="hero" />
             <a className="button button-secondary" href="#contact">Connect</a>
           </div>
         </div>
