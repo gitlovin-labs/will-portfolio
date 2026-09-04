@@ -126,7 +126,6 @@ export default function Home() {
       <section id="outcomes" className="shell section">
         <div className="section-heading">
           <div><p className="section-kicker">Selected outcomes</p><h2>Proof over positioning.</h2></div>
-          <p>Representative results across pricing, business transformation, and ecommerce operations.</p>
         </div>
         <div className="metrics-grid">
           <OutcomeCaseStudy {...outcomes[0]} />
