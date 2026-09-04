@@ -1,5 +1,6 @@
 import OutcomeCaseStudy from "./components/OutcomeCaseStudy";
 import BuildCaseStudy from "./components/BuildCaseStudy";
+import MarketingCaseStudy from "./components/MarketingCaseStudy";
 
 const outcomes = [
   {
@@ -129,6 +130,7 @@ export default function Home() {
         </div>
         <div className="metrics-grid">
           {outcomes.map((outcome) => <OutcomeCaseStudy key={outcome.value} {...outcome} />)}
+          <MarketingCaseStudy />
         </div>
       </section>
 
