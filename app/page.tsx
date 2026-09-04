@@ -44,7 +44,7 @@ const outcomes = [
     ]
   },
   {
-    value:"0 → 90%",label:"Profitability-aligned incentives",detail:"Redesigned commission economics, improving profitability alignment from near zero to approximately 90%.",className:"metric-card metric-card-wide",
+    value:"0 → 90%",label:"Profitability-aligned incentives",detail:"Redesigned commission economics, improving profitability alignment from near zero to approximately 90%.",className:"metric-card",
     category:"Incentive transformation",headline:"Connecting seller rewards to profitable growth.",capabilities:"Incentive design · Financial modeling · Change management",
     stats:[{value:"0 → 90%",label:"Approximate alignment improvement"},{value:"$300K+",label:"Commissions and eligible bonuses administered"},{value:"20+",label:"Plan participants"}],
     flow:["Model","Test","Teach","Operate"],
@@ -129,8 +129,9 @@ export default function Home() {
           <p>Representative results across pricing, business transformation, and ecommerce operations.</p>
         </div>
         <div className="metrics-grid">
-          {outcomes.map((outcome) => <OutcomeCaseStudy key={outcome.value} {...outcome} />)}
+          <OutcomeCaseStudy {...outcomes[0]} />
           <MarketingCaseStudy />
+          {outcomes.slice(1).map((outcome) => <OutcomeCaseStudy key={outcome.value} {...outcome} />)}
         </div>
       </section>
 

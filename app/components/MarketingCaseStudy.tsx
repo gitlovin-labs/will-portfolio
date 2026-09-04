@@ -104,8 +104,11 @@ export default function MarketingCaseStudy() {
               </div>
 
               <div className="marketing-proof">
-                <span>$51K</span><i>→</i><span>$100K MRR GP</span><i>→</i><strong>$3.6M</strong>
-                <small>Spend</small><small aria-hidden="true" /><small>Contracted</small><small aria-hidden="true" /><small>Projected lifetime GP</small>
+                <div><strong>$51K</strong><span>Marketing spend</span></div>
+                <i aria-hidden="true">→</i>
+                <div><strong>$100K</strong><span>Contracted monthly recurring gross profit</span></div>
+                <i aria-hidden="true">→</i>
+                <div><strong>$3.6M</strong><span>Projected lifetime gross profit</span></div>
               </div>
 
               <div className="marketing-view-toggle" role="tablist" aria-label="Marketing environment">
