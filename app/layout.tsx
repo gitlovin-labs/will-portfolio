@@ -13,17 +13,35 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://will-portfolio-delta.vercel.app"),
-  title: "Will McLaughlin | Commercial Operator & Builder",
+  metadataBase: new URL("https://willmclaughlin.vercel.app"),
+  title: "Will McLaughlin | GTM Strategy & Operations",
   description:
-    "Commercial operator, founder, and AI-enabled builder working across pricing, revenue operations, analytics, ecommerce, and practical software.",
-  alternates: { canonical: "/" },
+    "GTM Strategy & Operations leader specializing in pricing, commercial performance, revenue growth, and AI-enabled operating systems.",
+  alternates: { canonical: "https://willmclaughlin.vercel.app" },
   openGraph: {
-    title: "Will McLaughlin | Commercial Operator & Builder",
-    description: "Turning complicated commercial problems into practical systems.",
-    url: "/",
+    title: "Will McLaughlin | GTM Strategy & Operations",
+    description: "GTM Strategy & Operations leader specializing in pricing, commercial performance, revenue growth, and AI-enabled operating systems.",
+    url: "https://willmclaughlin.vercel.app",
     siteName: "Will OS",
+    images: [{
+      url: "https://willmclaughlin.vercel.app/opengraph-image",
+      width: 1200,
+      height: 630,
+      alt: "Will McLaughlin — GTM Strategy & Operations",
+    }],
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Will McLaughlin | GTM Strategy & Operations",
+    description: "GTM Strategy & Operations leader specializing in pricing, commercial performance, revenue growth, and AI-enabled operating systems.",
+    images: [{
+      url: "https://willmclaughlin.vercel.app/opengraph-image",
+      alt: "Will McLaughlin — GTM Strategy & Operations",
+    }],
+  },
+  other: {
+    "twitter:url": "https://willmclaughlin.vercel.app",
   },
 };
 

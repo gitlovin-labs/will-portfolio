@@ -62,13 +62,13 @@ const outcomes = [
 const missions = [
   { number: "01", title: "Build useful AI applications", text: "Turn real operating problems into practical, human-in-the-loop tools—and document what works.", status: "Building now" },
   { number: "02", title: "Grow Onward Hound", text: "Improve product, channel, supplier, and economic systems behind an established pet-products brand.", status: "Operating" },
-  { number: "03", title: "Join the right operating team", text: "Apply pricing, commercial strategy, analytics, and founder judgment to consequential work.", status: "Exploring" },
+  { number: "03", title: "Join the right GTM team", text: "Apply GTM strategy, pricing, commercial performance, analytics, and cross-functional execution to consequential growth problems.", status: "Exploring" },
 ];
 
 const experience = [
   { company: "Deloitte", role: "Business Technology Consultant", period: "Sep 2019–Sep 2021", mandate: "Business transformation and executive reporting for U.S. Government programs.", proof: "Consolidated 46 reporting systems into one environment supporting oversight of $800M in assets.", tags: ["Transformation", "Power BI", "Executive reporting"] },
   { company: "Deposco", role: "Solutions Consultant", period: "Sep 2021–Jul 2022", mandate: "Enterprise SaaS implementation and operational workflow translation.", proof: "Configured data, reporting, and warehouse workflows for a $100M+ cold chain logistics provider.", tags: ["SaaS", "SQL", "Implementation"] },
-  { company: "Booster", role: "Senior Manager, Revenue Operations", period: "Jul 2022–Jan 2026", mandate: "Pricing, revenue operations, and commercial operating-system ownership.", proof: "Led pricing transformation, incentive redesign, CRM migration, planning, and executive operating cadence.", tags: ["Pricing", "RevOps", "Commercial strategy"] },
+  { company: "Booster", role: "Revenue Operations Manager — Apr 2024–Jan 2026\nSenior Data Analyst — Jul 2022–Apr 2024", period: "", mandate: "Pricing, revenue operations, and commercial operating-system ownership.", proof: "Led pricing transformation, incentive redesign, CRM migration, forecasting, planning, and executive operating cadence.", tags: ["Pricing", "RevOps", "Commercial strategy"] },
   { company: "Onward Hound", role: "Founder & Operator", period: "Feb 2022–Present", mandate: "Founder/operator proof across product, economics, sourcing, and ecommerce.", proof: "Built the brand from zero to $625K+ in Amazon revenue and 32K+ units sold.", tags: ["Ecommerce", "Amazon", "Founder"] },
 ];
 
@@ -98,9 +98,9 @@ export default function Home() {
 
       <section id="top" className="shell hero">
         <div className="hero-copy">
-          <div className="eyebrow"><span className="eyebrow-line" />Commercial operator · Founder · AI builder</div>
-          <h1>I turn complicated commercial problems into <span>practical systems.</span></h1>
-          <p className="hero-lede">Pricing, revenue operations, analytics, and founder judgment—translated into measurable outcomes and increasingly, useful software.</p>
+          <div className="eyebrow"><span className="eyebrow-line" />GTM Strategy &amp; Operations · Pricing · Commercial Growth</div>
+          <h1>I turn complicated growth problems into <span>profitable operating systems.</span></h1>
+          <p className="hero-lede">GTM planning, pricing, forecasting, performance management, and cross-functional execution—backed by consulting rigor, SaaS experience, and direct P&amp;L ownership.</p>
           <div className="hero-actions">
             <a className="button button-primary" href="#outcomes">Explore my work <ArrowIcon /></a>
             <BuildCaseStudy trigger="hero" />
@@ -111,11 +111,11 @@ export default function Home() {
         <aside className="now-card">
           <div className="window-bar"><div className="traffic-lights"><i /><i /><i /></div><span>currently.app</span></div>
           <div className="now-content">
-            <p className="now-label">Will McLaughlin</p><h2>Operator in build mode.</h2>
+            <p className="now-label">Will McLaughlin</p><h2>GTM strategy and operations leader.</h2>
             <dl>
               <div><dt>Building</dt><dd>Useful AI applications</dd></div>
               <div><dt>Operating</dt><dd>Onward Hound</dd></div>
-              <div><dt>Exploring</dt><dd>Strategy & operating roles</dd></div>
+              <div><dt>Exploring</dt><dd>GTM strategy &amp; operations roles</dd></div>
               <div><dt>Based in</dt><dd>Greenville, SC</dd></div>
             </dl>
             <div className="now-status"><span className="status-dot" />Available for the right fit</div>
@@ -153,14 +153,14 @@ export default function Home() {
       <section id="experience" className="shell section">
         <div className="section-heading">
           <div><p className="section-kicker">Operating history</p><h2>Built across the stack.</h2></div>
-          <p>A progression from transformation and implementation into commercial ownership and founder judgment.</p>
+          <p>A progression from transformation and implementation into GTM strategy, commercial ownership, and direct P&amp;L accountability.</p>
         </div>
         <div className="timeline">
           {experience.map((item, index) => (
             <article className="timeline-row" key={item.company}>
               <div className="timeline-marker"><span>{String(index + 1).padStart(2, "0")}</span></div>
               <div className="timeline-main">
-                <div className="timeline-title"><div><h3>{item.company}</h3><p>{item.role}</p></div><span>{item.period}</span></div>
+                <div className="timeline-title"><div><h3>{item.company}</h3><p>{item.role}</p></div>{item.period && <span>{item.period}</span>}</div>
                 <p className="timeline-mandate">{item.mandate}</p>
                 <p className="timeline-proof">{item.proof}</p>
                 <div className="timeline-tags">{item.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
@@ -190,7 +190,7 @@ export default function Home() {
 
       <footer id="contact">
         <div className="shell footer-inner">
-          <div><p className="section-kicker">Open channel</p><h2>Let’s build something useful.</h2></div>
+          <div><p className="section-kicker">Open channel</p><h2>Let’s solve a hard growth problem.</h2></div>
           <div className="footer-links">
             <a href="mailto:wmclaug96@gmail.com">Email <ArrowIcon /></a>
             <a href="https://www.linkedin.com/in/williamfmclaughlin" target="_blank" rel="noreferrer">LinkedIn <ArrowIcon /></a>
