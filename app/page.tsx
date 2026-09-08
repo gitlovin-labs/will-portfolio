@@ -6,7 +6,7 @@ const outcomes = [
   {
     value: "$5.4M", label: "Projected customer-lifetime net profit impact", detail: "Led a pricing transformation across 300+ accounts with essentially zero regretted churn.", className: "metric-card metric-card-featured",
     category: "Pricing transformation", headline: "Turning fragmented pricing into a controlled growth system.", capabilities: "Commercial strategy · Pricing operations · Change management",
-    stats: [{value:"$5.4M",label:"Projected customer-lifetime net profit impact"},{value:"300+",label:"Accounts migrated"},{value:"Near-zero",label:"Regretted churn"}],
+    stats: [{value:"$5.4M",label:"Projected customer-lifetime net profit impact"},{value:"300+",label:"Accounts migrated"},{value:"0",label:"Regretted churn"}],
     flow:["Diagnose","Segment","Align","Migrate"],
     ownership:"Strategy, financial modeling, segmentation, executive approval path, cross-functional rollout design, account-level implementation preparation, and field enablement.",
     sections:[
