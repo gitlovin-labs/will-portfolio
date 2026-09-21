@@ -70,6 +70,7 @@ const experience = [
   { company: "Deposco", role: "Solutions Consultant", period: "Sep 2021–Jul 2022", mandate: "Enterprise SaaS implementation and operational workflow translation.", proof: "Configured data, reporting, and warehouse workflows for a $100M+ cold chain logistics provider.", tags: ["SaaS", "SQL", "Implementation"] },
   { company: "Booster", role: "Revenue Operations Manager — Apr 2024–Jan 2026\nSenior Data Analyst — Jul 2022–Apr 2024", period: "", mandate: "Pricing, revenue operations, and commercial operating-system ownership.", proof: "Led pricing transformation, incentive redesign, CRM migration, forecasting, planning, and executive operating cadence.", tags: ["Pricing", "RevOps", "Commercial strategy"] },
   { company: "Onward Hound", role: "Founder & Operator", period: "Feb 2022–Present", mandate: "Founder/operator proof across product, economics, sourcing, and ecommerce.", proof: "Built the brand from zero to $625K+ in Amazon revenue and 32K+ units sold.", tags: ["Ecommerce", "Amazon", "Founder"] },
+  { company: "Professional AI Evaluation", role: "Corporate Strategy · Contract", period: "Aug 2026–Present", mandate: "Selected for paid expert evaluation work reviewing AI-generated corporate strategy deliverables.", proof: "Assess analytical rigor, business reasoning, executive communication, writing, and presentation quality.", tags: ["AI Evaluation", "Corporate Strategy", "Executive Communication"] },
 ];
 
 const builds = [
